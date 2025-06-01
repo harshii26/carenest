@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# environment
+.env
+
+# logs
+logs
+*.log
+
+# runtime
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# system
+.DS_Store
