@@ -15,7 +15,7 @@ const FamilyMedicationTracker = () => {
   const [editId, setEditId] = useState(null);
 
   const fetchMeds = async () => {
-    const res = await fetch('http://localhost:5000/api/medications');
+    const res = await fetch('https://carenest-grcr.onrender.com/api/medications');
     const data = await res.json();
     setMedications(data);
   };
@@ -32,8 +32,8 @@ const FamilyMedicationTracker = () => {
     e.preventDefault();
     const method = editId ? 'PUT' : 'POST';
     const url = editId
-      ? `http://localhost:5000/api/medications/${editId}`
-      : 'http://localhost:5000/api/medications';
+      ? `https://carenest-grcr.onrender.com/api/medications/${editId}`
+      : 'https://carenest-grcr.onrender.com/api/medications';
 
     await fetch(url, {
       method,
@@ -63,7 +63,7 @@ const FamilyMedicationTracker = () => {
 
   const handleDelete = async id => {
     if (window.confirm('Are you sure you want to delete this medication?')) {
-      await fetch(`http://localhost:5000/api/medications/${id}`, {
+      await fetch(`https://carenest-grcr.onrender.com/api/medications/${id}`, {
         method: 'DELETE'
       });
       fetchMeds();

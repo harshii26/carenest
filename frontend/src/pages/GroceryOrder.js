@@ -10,7 +10,7 @@ const GroceryOrder = () => {
   const [time, setTime] = useState("");
 
   useEffect(() => {
-    fetch("http://localhost:5000/api/groceries")
+    fetch("https://carenest-grcr.onrender.com/api/groceries")
       .then((res) => res.json())
       .then((data) => {
         console.log("Fetched Groceries:", data);
@@ -28,7 +28,7 @@ const GroceryOrder = () => {
     const newItem = { name, quantity, date, time, status: "Pending" };
 
     try {
-      const res = await fetch("http://localhost:5000/api/groceries", {
+      const res = await fetch("https://carenest-grcr.onrender.com/api/groceries", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newItem),
@@ -48,7 +48,7 @@ const GroceryOrder = () => {
   };
 
   const updateStatus = async (id, newStatus) => {
-    await fetch(`http://localhost:5000/api/groceries/${id}`, {
+    await fetch(`https://carenest-grcr.onrender.com/api/groceries/${id}`, {
       method: "PUT",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ status: newStatus }),
@@ -58,7 +58,7 @@ const GroceryOrder = () => {
   };
 
   const deleteGrocery = async (id) => {
-    await fetch(`http://localhost:5000/api/groceries/${id}`, { method: "DELETE" });
+    await fetch(`https://carenest-grcr.onrender.com/api/groceries/${id}`, { method: "DELETE" });
     setGroceries(groceries.filter((g) => g._id !== id));
   };
 

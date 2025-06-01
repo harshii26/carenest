@@ -3,7 +3,7 @@ import io from 'socket.io-client';
 import axios from 'axios';
 import '../styles.css';
 
-const socket = io('http://localhost:5000'); // Change if deployed
+const socket = io('https://carenest-grcr.onrender.com'); // Change if deployed
 
 const ChatPage = ({ currentUser, chatPartner }) => {
   const [message, setMessage] = useState('');

@@ -12,7 +12,7 @@ const TaskManager = () => {
   // Fetch all tasks from the server
   const fetchTasks = async () => {
     try {
-      const res = await fetch('http://localhost:5000/api/tasks');
+      const res = await fetch('https://carenest-grcr.onrender.com/api/tasks');
       const data = await res.json();
       setTasks(data);
     } catch (error) {
@@ -29,7 +29,7 @@ const TaskManager = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await fetch('http://localhost:5000/api/tasks/', {
+      await fetch('https://carenest-grcr.onrender.com/api/tasks/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),
@@ -49,7 +49,7 @@ const TaskManager = () => {
   // Delete a task
   const handleDelete = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      await fetch(`https://carenest-grcr.onrender.com/api/tasks/${id}`, {
         method: 'DELETE',
       });
       fetchTasks();
@@ -61,7 +61,7 @@ const TaskManager = () => {
   // Mark task as completed
   const markAsCompleted = async (id) => {
     try {
-      await fetch(`http://localhost:5000/api/tasks/${id}`, {
+      await fetch(`https://carenest-grcr.onrender.com/api/tasks/${id}`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ status: 'Completed' }),

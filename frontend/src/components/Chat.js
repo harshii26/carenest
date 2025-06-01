@@ -5,7 +5,7 @@ import MessageBubble from './MessageBubble';
 import TextToSpeech from './TextToSpeech';
 import '../styles.css';
 
-const socket = io('http://localhost:5000'); // adjust for production
+const socket = io('https://carenest-grcr.onrender.com'); // adjust for production
 
 const Chat = ({ sender, receiver }) => {
   const [message, setMessage] = useState('');
